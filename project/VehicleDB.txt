@@ -1,0 +1,116 @@
+CREATE DATABASE vehicle;
+
+create table Product
+(
+	ProductId int identity(10000,1),
+	ProductName varchar(50),
+	BrandName varchar(50),
+	Model varchar(50),
+	Price float,
+	QuantityAvailable int,
+
+	primary key(ProductId),
+);
+
+
+create table Employee
+(
+	EmpId int identity(10000,1),
+	EmpFName varchar (50),
+	EmpLName varchar (50),
+	Gender varchar(50),
+	EmpDOB date,
+	Age int,
+	NIC varchar(50),
+	EmpRole varchar(50),
+	EmpAddress varchar(100),
+	EmpLContact varchar(10),
+	EmpMContact varchar(10),
+	EmpEmail varchar(50),
+	EmpBasicSalary float,
+
+	primary key(EmpId),
+);
+
+create table PurchaseProduct
+(
+	PPId int identity(10000,1),
+	CusFName varchar (50),
+	CusLName varchar (50),
+	NIC varchar(50),
+	ProductId int,
+	ProductName varchar(50),
+	BrandName  varchar(50),
+	Model varchar(50),
+	QuantityAvailable  int,
+	price float,
+	PurDate date,
+	CusAddress varchar(100),
+	CusLContact varchar(10),
+	CusMContact varchar(10),
+	CusEmail varchar(50),
+
+	primary key(PPId)
+);
+
+create table Supplier
+(
+	SupplierID varchar(50),
+	SupplierName varchar(50),
+	Address varchar(50),
+	Contact varchar(50),
+	status varchar(20),
+
+	primary key(SupplierID)
+);
+create table Attendance
+(
+	AttId int identity(10000,1),
+	EmpId int ,
+	EmpFName varchar (50),
+	InTime varchar(50),
+	OutTime varchar(50),
+	duration varchar(50),
+	OverTime varchar(50),
+	Shifts varchar(50),
+	EmpRole  varchar(50),
+	Dates date,
+	AttendanceStatus varchar(50),
+	primary key(AttId),
+	foreign key(EmpId) references Employee
+);
+
+create table OtherExpenses
+(
+	expID varchar(50),
+	description varchar(50),
+	date varchar(50),
+	amount float,
+
+	primary key(expID),
+);
+
+create table income
+(
+	incomeID int identity(10000,1),
+	month varchar(50) unique,
+	revenue varchar(50),
+	sold float,
+	grossProfit float,
+	expenses float,
+	netIncome float,
+
+	primary key(incomeID),
+);
+
+create table schedule
+(
+	scheduleID int identity(10000,1),
+	category varchar(50),
+	title varchar(50),
+	date varchar(50),
+	time varchar(50),
+	notes varchar(50),
+
+	primary key(scheduleID),
+);
