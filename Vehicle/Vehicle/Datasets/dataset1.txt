@@ -1,0 +1,15 @@
+Price, Mileage, Brand, Engine, Buy
+High, High, new, Low, no
+High, High, new, High, no
+Low, Medium, new, Low, yes
+Medium, Medium, old, High, yes
+Medium, Low, new, Medium, yes
+Medium, Low, old, High, no
+Low, Low, old, Medium, yes
+High, High, new, High, no
+High, Low, new, Low, yes
+Medium, Medium, old, High, yes
+High, High, old, High, yes
+Low, Medium, new, Medium, yes
+Low, Medium, old, Low, yes
+Medium, High, new, High, no
